@@ -1,7 +1,11 @@
 import React from "react";
+
+// Styles
 import "./styles.scss";
-import Placeholder from "../../img/placeholder-user.jpg";
-import Sort from "../../img/sort-icon.png";
+
+// Images
+import PlaceholderImg from "../../img/placeholder-user.jpg";
+import SortIcon from "../../img/sort-icon.png";
 
 const DataTable = (props) => {
   return (
@@ -17,10 +21,9 @@ const DataTable = (props) => {
             >
               <span className="column-sort">
                 First Name
-                <img src={Sort} alt="First Name" />
+                <img src={SortIcon} alt="First Name" />
               </span>
             </th>
-            ;
             <th
               onClick={() => {
                 props.onSortChange("surname");
@@ -28,7 +31,7 @@ const DataTable = (props) => {
             >
               <span className="column-sort">
                 Last Name
-                <img src={Sort} alt="Last Name" />
+                <img src={SortIcon} alt="Last Name" />
               </span>
             </th>
             <th
@@ -37,25 +40,23 @@ const DataTable = (props) => {
               }}
             >
               <span className="column-sort">
-                Email
-                <img src={Sort} alt="Email" />
+                E-Mail
+                <img src={SortIcon} alt="E-Mail" />
               </span>
             </th>
             <th>Actions</th>
           </tr>
         </thead>
-
         <tbody>
           {props.users.length ? (
             props.users.map((user) => (
               <tr key={user.id}>
                 <td className="field-avatar">
                   <img
-                    src={user.avatar ? user.avatar : Placeholder}
+                    src={user.avatar ? user.avatar : PlaceholderImg}
                     alt={user.first_name}
                   />
                 </td>
-
                 <td>{user.first_name}</td>
                 <td>{user.last_name}</td>
                 <td>{user.email}</td>
@@ -68,7 +69,6 @@ const DataTable = (props) => {
                   >
                     Update
                   </button>
-
                   <button
                     className="field-actions__delete"
                     onClick={() => props.deleteRow(user)}

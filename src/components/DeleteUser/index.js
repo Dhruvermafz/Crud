@@ -10,7 +10,7 @@ const DeleteUser = (props) => {
 
   useEffect(() => {
     setUser(props.currentUser);
-  });
+  }, [props]);
   return (
     <form
       onSubmit={(event) => {

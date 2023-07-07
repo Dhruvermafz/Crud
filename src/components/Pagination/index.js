@@ -5,7 +5,7 @@ const Pagination = ({ totalResults, currentPage, paginate, pageSize }) => {
   const [pageNumbers, setPageNumber] = useState([]);
 
   useEffect(() => {
-    const totalPageCount = Math.cell(totalResults / pageSize);
+    const totalPageCount = Math.ceil(totalResults / pageSize);
     const page = [];
 
     for (let index = 1; index <= totalPageCount; index++) {
